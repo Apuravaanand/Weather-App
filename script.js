@@ -1,5 +1,3 @@
-/* ================= WEATHER APP ================= */
-
 const weatherForm = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
@@ -70,8 +68,6 @@ function displayError(message) {
   card.innerHTML = `<p class="errorDisplay">${message}</p>`;
 }
 
-/* ================= PLACEHOLDER TYPING ANIMATION ================= */
-
 const sentences = [
   "Enter city name Delhi",
   "Try Mumbai, London",
@@ -118,15 +114,11 @@ function placeholderTypingLoop() {
 
 placeholderTypingLoop();
 
-/* ================= INPUT INTERACTION CONTROL ================= */
-
-// Stop animation when user types
 cityInput.addEventListener("focus", () => {
   isPaused = true;
   cityInput.placeholder = "";
 });
 
-// Resume animation if input is empty
 cityInput.addEventListener("blur", () => {
   if (!cityInput.value.trim()) {
     isPaused = false;
